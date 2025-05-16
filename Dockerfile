@@ -2,14 +2,17 @@
 FROM python:3.11-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1    # Do not create unnecessary .pyc files (i.e. __pycache__ folders)
-ENV PYTHONUNBUFERED 1            # Print output/logs real-time in Docker containers. Useful for debugging.
+# Do not create unnecessary .pyc files (i.e. __pycache__ folders)
+# Print output/logs real-time in Docker containers. Useful for debugging.
+ENV PYTHONDONTWRITEBYTECODE=1    
+ENV PYTHONUNBUFERED=1            
 
 # Set working directory
 WORKDIR /app
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y gcc    # gcc is a C compiler reuqired to install some dependencies
+# gcc is a C compiler reuqired to install some dependencies
+RUN apt-get update && apt-get install -y gcc    
 
 # Copy dependency files
 COPY requirements.txt .
@@ -22,6 +25,9 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Default command
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]      # app(folder).main(main.py):app(FastAPI instance; app=FastAPI())
-                                                                            # --host 0.0.0.0 (Expose the app to all network interfaces. not just localhost)
-                                                                            # uvicorn starts the FastAPI web app servier. It's a fast and lightweight ASGI server used to run FastAPI or other ASGI-based Python web apps.
+# app(folder).main(main.py):app(FastAPI instance; app=FastAPI())
+# --host 0.0.0.0 (Expose the app to all network interfaces. not just localhost)
+# uvicorn starts the FastAPI web app servier. It's a fast and lightweight ASGI server used to run FastAPI or other ASGI-based Python web apps.
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]      
+                                                                            
+                                                                            
