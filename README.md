@@ -5,7 +5,7 @@
 This project demonstrates **ONE core capability**:
 > I can build, optimize, test, and deploy production-ready ML services that are scalable, modular, cloud-native, and collaborative.
 
-Built as a technical showcase for roles like **Senior Data Scientist / ML Engineer**. This repo integrates everything needed to move fast, ship weekly, and handle complexity.
+### Built as a technical showcase for roles like **Senior Data Scientist / ML Engineer**. This repo integrates everything needed to move fast, ship weekly, and handle complexity.
 ---
 
 ### Problem This Project Solves
