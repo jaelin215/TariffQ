@@ -1,5 +1,5 @@
 fastapi
-uvicorn    # ASGI server to run FastAPI
+uvicorn[standard]    # ASGI server to run FastAPI
 scikit-learn
 pandas
 joblib     # To save/load ML models efficiently. Parallel computing using multiple CPU cores (i.e. Parallel, delayed). Faster & more robust than pickle for numpy arrays and scikit-learn models. Ideal for production ML apps using FastAPI.
