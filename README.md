@@ -27,34 +27,5 @@ This repo fixes that. It's a blueprint for building and collaborating on real-wo
 - pyproject.toml - Care about formatting, linting, and build config. Using modern Python tooling (black, isort, pytest, etc.) 
 
 
-|
-├── app/                         # Main application code
-│   ├── __init__.py
-│   ├── main.py                  # FastAPI app entry point
-│   ├── models/                  # ML models or database schemas
-│   │   └── risk_model.py
-│   ├── routes/                  # API endpoints
-│   │   └── predict.py
-│   ├── services/                # Business logic, utils
-│   │   ├── predictor.py
-│   │   └── optuna_tuner.py
-│   ├── config.py                # Configurations (env, settings)
-│   └── airflow/                # Airflow DAGs for orchestration
-│       └── retrain_model.py
-│
-├── tests/                       # Unit and integration tests
-│   ├── __init__.py
-│   ├── test_predict.py
-│   └── test_optuna.py
-│
-├── .github/                     # GitHub Actions workflows
-│   └── workflows/
-│       └── ci.yml
-│
-├── Dockerfile                   # Container image definition
-├── requirements.txt             # Python dependencies
-├── Makefile                     # Dev/test/deploy commands
-├── README.md                    # Project overview
-├── .dockerignore                # Files to exclude from Docker build
-├── .gitignore                   # Files to exclude from Git repo
-└── pyproject.toml               # Optional - for formatting tools (black, isort)
+![image](https://github.com/user-attachments/assets/b6e98d1b-7e3a-4b97-a156-f73c446e4d6b)
+
