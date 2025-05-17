@@ -1,0 +1,1 @@
+# Make sure app/ directory has an __init__.py file (even if empty). This isn't required in modern Python, but helps with relative imports when using test discovery.

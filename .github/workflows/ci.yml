@@ -1,0 +1,36 @@
+# This file runs tests in gitHub's cloud CI environment (`runs-on: ubuntu-latest`)
+# This file uses Python installed via `actions/setup-python`
+# Running tests inside Docker avoids the “works on my machine” problem.
+name: Docker CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        run: |
+          docker build -t fastapi-app .
+
+      - name: Run tests inside Docker
+        run: |
+          docker run --rm \
+            -e PYTHONPATH=/app \
+            fastapi-app \
+            pytest tests/
+      
+      - name: Smoke test: App startup
+        run: |
+          docker run --rm fastapi-app python -c "from app.main import app; print('App booted')"

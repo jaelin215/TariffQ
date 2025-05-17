@@ -5,7 +5,8 @@ FROM python:3.11-slim
 # Do not create unnecessary .pyc files (i.e. __pycache__ folders)
 # Print output/logs real-time in Docker containers. Useful for debugging.
 ENV PYTHONDONTWRITEBYTECODE=1    
-ENV PYTHONUNBUFERED=1            
+ENV PYTHONUNBUFERED=1     
+ENV PYTHONPATH=/app       
 
 # Set working directory
 WORKDIR /app
@@ -28,6 +29,4 @@ COPY . .
 # app(folder).main(main.py):app(FastAPI instance; app=FastAPI())
 # --host 0.0.0.0 (Expose the app to all network interfaces. not just localhost)
 # uvicorn starts the FastAPI web app servier. It's a fast and lightweight ASGI server used to run FastAPI or other ASGI-based Python web apps.
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]      
-                                                                            
-                                                                            
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]                                                                                                                                                            

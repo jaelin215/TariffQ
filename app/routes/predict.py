@@ -11,5 +11,5 @@ class InputData(BaseModel):
 @router.post("/predict")
 def predict(data: InputData):
     # Placeholder logic
-    result = data.feature1 + data.feature2
+    result = data.feature1 * data.feature2
     return {"prediction": result}
