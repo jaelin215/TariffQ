@@ -1,0 +1,21 @@
+# Tells codspace what your development environment looks like,
+# which extensions to auto-install,
+# How to initialize your workspace
+
+{
+  "name": "TariffRisk Dev Container",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter",
+    "esbenp.prettier-vscode"
+  ],
+  "postCreateCommand": "make install && make build && make test",
+  "remoteUser": "vscode"
+}

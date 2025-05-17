@@ -31,6 +31,6 @@ jobs:
             fastapi-app \
             pytest tests/
       
-      - name: Smoke test: App startup
+      - name: Smoke test App startup
         run: |
           docker run --rm fastapi-app python -c "from app.main import app; print('App booted')"
