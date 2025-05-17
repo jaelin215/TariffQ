@@ -1,5 +1,5 @@
 # Variables
-IMAGE_NAME=tariffq-app
+IMAGE_NAME=tariffrisk-app
 CONTAINER_NAME=tariffq-test
 PYTHONPATH=app
 
