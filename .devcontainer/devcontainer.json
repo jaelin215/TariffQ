@@ -17,6 +17,5 @@
     }
   },
   "postCreateCommand": "make install && make build && make test",
-  "remoteUser": "vscode"
 }
 
