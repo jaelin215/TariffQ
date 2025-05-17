@@ -1,4 +1,4 @@
-# TariffQ
+# TariffRisk
 
 ## Scalable Machine Learning Service (with Optuna, Airflow, Docker, and CI/CD)
 
